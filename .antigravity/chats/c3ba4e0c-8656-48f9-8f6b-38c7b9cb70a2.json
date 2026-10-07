@@ -3,6 +3,31 @@
   "name": "Actúa como un Arquitecto de Software",
   "createdAt": "2026-10-07T06:17:07.185Z",
   "filename": "c3ba4e0c-8656-48f9-8f6b-38c7b9cb70a2.json",
-  "geminiStarted": false,
-  "messages": []
+  "geminiStarted": true,
+  "messages": [
+    {
+      "id": "00d3ee6b-f5f2-4a54-b416-1cbe854b5907",
+      "role": "user",
+      "content": "Primero puedes hablar en español para que te entienda",
+      "status": "pending",
+      "model": "gemini-3.8-flash-high",
+      "client_type": "gemini-bridge",
+      "parent_message_id": null,
+      "created_at": "2026-10-07T06:25:10.369Z",
+      "sender": "ios",
+      "is_cancelled": false
+    },
+    {
+      "id": "0d023d54-b764-4d36-9a72-09e6b232c3b8",
+      "role": "agent",
+      "content": "¡Claro que sí! A partir de ahora nos comunicaremos en español. \n\n¿En qué te gustaría trabajar hoy o qué proyecto te gustaría que desarrollemos?",
+      "status": "completed",
+      "model": "gemini-3.8-flash-high",
+      "client_type": "gemini-bridge",
+      "parent_message_id": "00d3ee6b-f5f2-4a54-b416-1cbe854b5907",
+      "created_at": "2026-10-07T06:25:19.363Z",
+      "sender": "macOS",
+      "is_cancelled": false
+    }
+  ]
 }

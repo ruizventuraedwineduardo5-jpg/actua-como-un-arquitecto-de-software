@@ -1,0 +1,31 @@
+# =============================================================================
+# JARVIS OMNI-GHOST SUPREME - DEPENDENCIAS DEL SISTEMA
+# =============================================================================
+
+# Motor de Inteligencia Artificial Multimodal
+google-genai>=2.28.0
+requests>=2.31.0
+aiohttp>=3.9.0
+httpx>=0.27.0
+
+# Visión y Percepción de Pantalla
+pillow>=10.2.0
+mss>=9.0.1
+
+# Voz, Reconocimiento y Síntesis de Audio (TTS/STT)
+edge-tts>=6.1.9
+pyttsx3>=2.90
+SpeechRecognition>=3.10.1
+
+# Finanzas, Hojas de Cálculo y Telemetría
+openpyxl>=3.1.2
+psutil>=5.9.8
+
+# Meta-IDE y Servidores Web
+flask>=3.0.2
+
+# Multimedia, Animación y Video MP4
+moviepy>=1.0.3
+
+# Ciberseguridad y Redes
+scapy>=2.5.0

@@ -1,0 +1,9 @@
+{
+  "name": "Cyber Test Suite",
+  "slug": "cyber_test_suite",
+  "description": "Aplicación de prueba generada automáticamente por tests",
+  "category": "productividad",
+  "author": "Edwin",
+  "created_at": "2026-10-07 06:40:13",
+  "url": "http://localhost:8080/cyber_test_suite/"
+}

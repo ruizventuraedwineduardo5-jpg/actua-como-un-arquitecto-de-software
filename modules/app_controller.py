@@ -18,6 +18,8 @@ from typing import Optional, List, Dict, Any
 
 import config
 
+TupleResult = tuple[bool, str, str]
+
 
 class AppController:
     """

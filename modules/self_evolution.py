@@ -22,6 +22,8 @@ from typing import Dict, Any, List, Optional, Type
 import config
 from modules.omni_ai_router import omni_router, AIContext
 
+TupleResult = tuple[bool, str]
+
 
 class BasePlugin:
     """Clase base de la que deben heredar todos los plugins auto-generados."""

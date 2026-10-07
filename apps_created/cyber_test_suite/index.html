@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Test Suite - Jarvis Supreme Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hud-background"></div>
+    <div class="container">
+        <header class="app-header">
+            <div class="brand">
+                <span class="pulse-dot"></span>
+                <span class="cyber-tag">JARVIS APPS</span>
+            </div>
+            <h1 class="glow-title">Cyber Test Suite</h1>
+            <p class="subtitle">Aplicación de prueba generada automáticamente por tests</p>
+        </header>
+
+        <main class="dashboard-grid">
+            <section class="card input-card">
+                <h3>+ Entrada de Datos</h3>
+                <div class="form-group">
+                    <input type="text" id="itemTitle" placeholder="Elemento o tarea para Edwin...">
+                    <button id="addBtn" class="cyber-btn">Registrar</button>
+                </div>
+            </section>
+
+            <section class="card stats-card">
+                <h3>Estado Operativo</h3>
+                <div class="stat-row">
+                    <span>Total Registros:</span>
+                    <strong id="counter" class="cyan-text">0</strong>
+                </div>
+                <div class="stat-row">
+                    <span>Sistema:</span>
+                    <strong class="green-text">Online Supreme</strong>
+                </div>
+            </section>
+
+            <section class="card list-card">
+                <h3>Registros Activos</h3>
+                <ul id="itemList" class="cyber-list">
+                    <!-- Dinámico -->
+                </ul>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <p>Construido autónomamente por Jarvis Omni-Ghost Supreme para Señor Edwin</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

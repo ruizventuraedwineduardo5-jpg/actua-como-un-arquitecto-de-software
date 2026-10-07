@@ -114,7 +114,8 @@ class LiveScreenVision:
         # Intento A: mss
         if MSS_AVAILABLE:
             try:
-                with mss.mss() as sct:
+                mss_cls = getattr(mss, "MSS", getattr(mss, "mss", None))
+                with mss_cls() as sct:
                     monitor = sct.monitors[1] if len(sct.monitors) > 1 else sct.monitors[0]
                     sct_img = sct.grab(monitor)
                     # Convertir a PIL y guardar PNG

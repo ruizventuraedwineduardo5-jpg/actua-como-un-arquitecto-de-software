@@ -79,12 +79,21 @@ class VoiceSystem:
         # 2. Edge-TTS con voz neuronal humana de alta definición
         if EDGE_TTS_AVAILABLE:
             try:
-                mp3_file = self.media_dir / f"tts_{int(time.time() * 1000)}.mp3"
-                # Ejecutar corutina de generación
-                asyncio.run(self._generate_edge_tts(clean_text, mp3_file))
-                if mp3_file.exists() and mp3_file.stat().st_size > 500:
-                    self._play_audio(mp3_file, wait=wait)
+                loop = None
+                try:
+                    loop = asyncio.get_running_loop()
+                except RuntimeError:
+                    pass
+
+                if loop and loop.is_running():
+                    loop.create_task(self._async_speak_edge(clean_text, wait=wait))
                     return True
+                else:
+                    mp3_file = self.media_dir / f"tts_{int(time.time() * 1000)}.mp3"
+                    asyncio.run(self._generate_edge_tts(clean_text, mp3_file))
+                    if mp3_file.exists() and mp3_file.stat().st_size > 500:
+                        self._play_audio(mp3_file, wait=wait)
+                        return True
             except Exception:
                 pass
 
@@ -100,6 +109,15 @@ class VoiceSystem:
 
         # Fallback visual en HUD de consola
         return False
+
+    async def _async_speak_edge(self, text: str, wait: bool = False):
+        try:
+            mp3_file = self.media_dir / f"tts_{int(time.time() * 1000)}.mp3"
+            await self._generate_edge_tts(text, mp3_file)
+            if mp3_file.exists() and mp3_file.stat().st_size > 500:
+                self._play_audio(mp3_file, wait=wait)
+        except Exception:
+            pass
 
     async def _generate_edge_tts(self, text: str, output_file: Path):
         communicate = edge_tts.Communicate(

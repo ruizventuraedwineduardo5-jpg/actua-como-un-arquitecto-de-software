@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JARVIS OMNI-GHOST SUPREME - HUD MAESTRO</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hud-grid-overlay"></div>
+    <div class="scanline"></div>
+
+    <div class="hud-container">
+        <!-- BARRA SUPERIOR HUD -->
+        <header class="hud-header">
+            <div class="header-left">
+                <div class="arc-reactor-mini"></div>
+                <div>
+                    <h1 class="logo-title">JARVIS OMNI-GHOST</h1>
+                    <span class="sub-badge">V2.5 SUPREME • MAESTRO: EDWIN</span>
+                </div>
+            </div>
+
+            <div class="header-center">
+                <div class="audio-visualizer-container">
+                    <span class="voice-status">VOZ ACTIVA (STREAMING)</span>
+                    <div class="audio-bars" id="audioBars">
+                        <!-- Generado por JS -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <div class="time-box">
+                    <div id="liveClock" class="clock-display">00:00:00</div>
+                    <div id="liveDate" class="date-display">CARGANDO...</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- PANELES PRINCIPALES -->
+        <main class="hud-main">
+            <!-- PANEL IZQUIERDO: TELEMETRÍA Y ENJAMBRE -->
+            <section class="hud-panel panel-telemetry">
+                <div class="panel-header">
+                    <h2>// TELEMETRÍA DE HARDWARE</h2>
+                    <span class="status-indicator live">EN VIVO</span>
+                </div>
+
+                <div class="gauge-grid">
+                    <div class="gauge-card">
+                        <span class="gauge-label">BATERÍA</span>
+                        <div class="gauge-val" id="batVal">98%</div>
+                        <div class="progress-bar"><div class="fill-bar" id="batBar" style="width: 98%;"></div></div>
+                        <small id="batStatus">ESTADO: ÓPTIMO</small>
+                    </div>
+
+                    <div class="gauge-card">
+                        <span class="gauge-label">MEMORIA RAM</span>
+                        <div class="gauge-val" id="ramVal">42%</div>
+                        <div class="progress-bar"><div class="fill-bar" id="ramBar" style="width: 42%;"></div></div>
+                        <small>USO: 3.4 GB / 8.0 GB</small>
+                    </div>
+
+                    <div class="gauge-card">
+                        <span class="gauge-label">CPU CORE</span>
+                        <div class="gauge-val" id="cpuVal">18%</div>
+                        <div class="progress-bar"><div class="fill-bar" id="cpuBar" style="width: 18%;"></div></div>
+                        <small>CARGA NORMAL</small>
+                    </div>
+
+                    <div class="gauge-card">
+                        <span class="gauge-label">ALMACENAMIENTO</span>
+                        <div class="gauge-val" id="storageVal">35%</div>
+                        <div class="progress-bar"><div class="fill-bar" id="storageBar" style="width: 35%;"></div></div>
+                        <small>42 GB DISPONIBLES</small>
+                    </div>
+                </div>
+
+                <div class="panel-header" style="margin-top: 20px;">
+                    <h2>// ENJAMBRE DE SUB-AGENTES</h2>
+                </div>
+                <div class="agent-list">
+                    <div class="agent-item active">
+                        <span class="agent-dot"></span>
+                        <div class="agent-info">
+                            <strong>SentinelAgent</strong>
+                            <span>Telemetría y Ciberseguridad</span>
+                        </div>
+                        <span class="agent-badge">VIGILANDO</span>
+                    </div>
+                    <div class="agent-item active">
+                        <span class="agent-dot"></span>
+                        <div class="agent-info">
+                            <strong>VisionScreenAgent</strong>
+                            <span>Percepción de Pantalla</span>
+                        </div>
+                        <span class="agent-badge">SINCRO</span>
+                    </div>
+                    <div class="agent-item active">
+                        <span class="agent-dot"></span>
+                        <div class="agent-info">
+                            <strong>CoderAgent</strong>
+                            <span>Self-Healing y Parches</span>
+                        </div>
+                        <span class="agent-badge">STANDBY</span>
+                    </div>
+                    <div class="agent-item active">
+                        <span class="agent-dot"></span>
+                        <div class="agent-info">
+                            <strong>AppBuilderAgent</strong>
+                            <span>Meta-IDE Local (8080)</span>
+                        </div>
+                        <span class="agent-badge">ACTIVO</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PANEL CENTRAL: REACTOR Y CONSOLA DE VOZ -->
+            <section class="hud-panel panel-center-reactor">
+                <div class="reactor-wrapper">
+                    <div class="reactor-outer-ring">
+                        <div class="reactor-inner-ring">
+                            <div class="reactor-core">
+                                <span>SUPREME</span>
+                                <small>JARVIS</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="voice-console">
+                    <div class="console-title">// DIÁLOGO EN VIVO CON EDWIN</div>
+                    <div class="speech-box" id="speechBox">
+                        "Saludos cordiales, Señor Edwin. Todos los sistemas del Omni-Ghost Supreme operan al cien por ciento de su capacidad. ¿En qué proyecto o misión nos enfocaremos hoy?"
+                    </div>
+                    <div class="input-command-wrapper">
+                        <input type="text" id="hudInput" placeholder="Dictar o escribir instrucción a Jarvis...">
+                        <button id="sendBtn" class="hud-btn glow-btn">TRANSMITIR</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PANEL DERECHO: MACROS Y MODULOS DE VIDA -->
+            <section class="hud-panel panel-modules">
+                <div class="panel-header">
+                    <h2>// ACCIONES Y MACROS SUPREME</h2>
+                </div>
+                <div class="macro-grid">
+                    <button class="macro-btn" onclick="executeMacro('night')">
+                        <span class="macro-icon">🌙</span>
+                        <div><strong>Modo Noche</strong><small>Descanso y Centinela</small></div>
+                    </button>
+                    <button class="macro-btn" onclick="executeMacro('turbo')">
+                        <span class="macro-icon">⚡</span>
+                        <div><strong>Modo Turbo</strong><small>Optimizar RAM y CPU</small></div>
+                    </button>
+                    <button class="macro-btn" onclick="executeMacro('sentry')">
+                        <span class="macro-icon">🛡️</span>
+                        <div><strong>Modo Guardia</strong><small>Escaneo Wi-Fi y Foto</small></div>
+                    </button>
+                    <button class="macro-btn" onclick="executeMacro('builder')">
+                        <span class="macro-icon">🛠️</span>
+                        <div><strong>Crear Nueva App</strong><small>Meta-IDE Antigravity</small></div>
+                    </button>
+                </div>
+
+                <div class="panel-header" style="margin-top: 24px;">
+                    <h2>// TELEMETRÍA MECÁNICA (MOTO)</h2>
+                </div>
+                <div class="moto-card">
+                    <div class="moto-header">
+                        <strong>MOTO EDW-001</strong>
+                        <span class="cyan-tag">14,500 KM</span>
+                    </div>
+                    <div class="moto-item">
+                        <span>Aceite de Motor (3000 km):</span>
+                        <strong class="green-text">ÓPTIMO (Resta 2,000 km)</strong>
+                    </div>
+                    <div class="moto-item">
+                        <span>Limpieza de Cadena (1000 km):</span>
+                        <strong class="yellow-text">Revisión en 200 km</strong>
+                    </div>
+                </div>
+
+                <div class="panel-header" style="margin-top: 24px;">
+                    <h2>// ENRUTADOR MULTI-IA</h2>
+                </div>
+                <div class="ai-status-row">
+                    <span class="ai-tag ready">Gemini 2.5 Flash</span>
+                    <span class="ai-tag ready">Groq Llama 3.3</span>
+                    <span class="ai-tag ready">DeepSeek R1/V3</span>
+                    <span class="ai-tag ready">Pollinations Flux</span>
+                </div>
+            </section>
+        </main>
+
+        <footer class="hud-footer">
+            <span>JARVIS SUPREME • HOSTING LOCAL: http://localhost:8080/</span>
+            <span>AUTOPROGRAMACIÓN Y SELF-HEALING EN CALIENTE ACTIVADOS</span>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "Jarvis Supreme Master HUD",
+  "slug": "jarvis_dashboard",
+  "description": "Panel de control cibernético futurista con telemetría en tiempo real, visualizador de voz y orquestador multi-agente.",
+  "category": "sistema",
+  "author": "Edwin",
+  "version": "2.5.0",
+  "created_at": "2026-10-07 06:36:00",
+  "url": "http://localhost:8080/jarvis_dashboard/"
+}
